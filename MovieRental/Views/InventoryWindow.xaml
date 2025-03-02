@@ -17,7 +17,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <!--Window Selections-->
+            <!--Window Selections yeet-->
             <StackPanel Grid.Row="0" Orientation="Horizontal">
                 <Button Name="RentalButton"
                 Content="Rentals"
