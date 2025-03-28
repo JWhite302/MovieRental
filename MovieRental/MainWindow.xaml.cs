@@ -25,6 +25,13 @@ namespace MovieRental
         {
             var inventoryWindow = new InventoryWindow();
             inventoryWindow.Show();
+            this.Close();
+        }
+        private void CustomerButton_Click( object sender, RoutedEventArgs e)
+        {
+            var customerWindow = new CustomerWindow();
+            customerWindow.Show();
+            this.Close();
         }
     }
 }

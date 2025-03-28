@@ -16,17 +16,6 @@ namespace MovieRental.ViewModels
     class InventoryViewModel : INotifyPropertyChanged
     { 
         //save and load movies
-        private int _id;
-        public int Id
-        {
-            get => _id;
-            set
-            {
-                _id = value;
-                OnPropertyChanged(nameof(Id));
-            }
-        }
-
         private string? _title;
         public string? Title
         {
@@ -73,7 +62,6 @@ namespace MovieRental.ViewModels
             using var context = new RentalDbContext();
             var newMovie = new Movie
             {
-                Id = this.Id,
                 Title = this.Title,
                 Genre = this.Genre,
                 ReleaseYear = this.ReleaseYear
@@ -94,20 +82,6 @@ namespace MovieRental.ViewModels
         }
 
         //search movies
-        private string _searchId;
-        public string SearchId
-        {
-            get => _searchId;
-            set
-            {
-                if (_searchId != value)
-                {
-                    _searchId = value;
-                    OnPropertyChanged(nameof(SearchId));
-                    SearchMovies();
-                }
-            }
-        }
         private string _searchTitle;
         public string SearchTitle
         {
@@ -155,18 +129,6 @@ namespace MovieRental.ViewModels
         {
             using var context = new RentalDbContext();
             var query = context.Movies.AsQueryable();
-            if (!string.IsNullOrWhiteSpace(SearchId))
-            {
-                if(int.TryParse(SearchId, out var id))
-                {
-                    query = query.Where(movie => movie.Id == id);
-                }
-                else
-                {
-                    SearchResults.Clear();
-                    return;
-                }
-            }
             if (!string.IsNullOrWhiteSpace(SearchTitle))
             {
                 query = query.Where(movie => movie.Title.Contains(SearchTitle));
@@ -177,7 +139,7 @@ namespace MovieRental.ViewModels
             }
             if (!string.IsNullOrWhiteSpace(SearchReleaseYear))
             {
-                if(int.TryParse(SearchGenre, out int year))
+                if(int.TryParse(SearchReleaseYear, out int year))
                 {
                     query = query.Where(movie => movie.ReleaseYear == year);
                 }

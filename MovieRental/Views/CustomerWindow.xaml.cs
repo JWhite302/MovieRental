@@ -23,5 +23,18 @@ namespace MovieRental
         {
             InitializeComponent();
         }
+
+        private void InventoryButton_Click(object sender, RoutedEventArgs e)
+        {
+            var inventoryWindow = new InventoryWindow();
+            inventoryWindow.Show();
+            this.Close();
+        }
+        private void RentalButton_Click(object sender, RoutedEventArgs e)
+        {
+            var rentalWindow = new MainWindow();
+            rentalWindow.Show();
+            this.Close();
+        }
     }
 }

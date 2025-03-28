@@ -21,14 +21,12 @@
                         Margin="0 0 5 0"/>
                 <Button Name="CustomerButton"
                         Content="Customers"
-                        Margin="0 0 5 0"/>
+                        Margin="0 0 5 0"
+                        Click="CustomerButton_Click"/>
                 <Button Name="InventoryButton"
                         Content="Inventory"
                         Margin="0 0 5 0"
                         Click="InventoryButton_Click"/>
-                <Button Name="Help"
-                        Content="Help"
-                        Margin="0 0 5 0"/>
             </StackPanel>
 
             <!--Search Interface-->
@@ -45,41 +43,43 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Name="CustomerIdLabel"
-                       Grid.Row="0"
-                       Grid.Column="0"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Right"
-                       Content="Customer Id :"
-                       FontWeight="Bold"/>
+                
                 <Label Name="CustomerLastNameLabel"
-                       Grid.Row="1"
+                       Grid.Row="0"
                        Grid.Column="0"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Right"
                        Content="Last Name :"
                        FontWeight="Bold"/>
                 <Label Name="CustomerFirstNameLabel"
-                       Grid.Row="2"
+                       Grid.Row="1"
                        Grid.Column="0"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Right"
                        Content="First Name :"
                        FontWeight="Bold"/>
+                <Label Name ="MovieTitleLabel"
+                       Grid.Row="2"
+                       Grid.Column="0"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Right"
+                       Content="Movie Title :"
+                       FontWeight="Bold"/>
 
-                <TextBox Name="CustomerIdTextBox"
+
+                <TextBox Name="LastNameTextBox"
                          Grid.Row="0"
                          Grid.Column="1"
                          Margin="5"
                          MinWidth="100"
                          HorizontalAlignment="Left"/>
-                <TextBox Name="LastNameTextBox"
+                <TextBox Name="FirstNameTextBox"
                          Grid.Row="1"
                          Grid.Column="1"
                          Margin="5"
                          MinWidth="100"
                          HorizontalAlignment="Left"/>
-                <TextBox Name="FirstNameTextBox"
+                <TextBox Name="MovieTitleTextBox"
                          Grid.Row="2"
                          Grid.Column="1"
                          Margin="5"
